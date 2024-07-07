@@ -1,0 +1,11 @@
+.json-input {
+    width: 100%;
+    min-height: 200px;
+    padding: 10px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: vertical;
+  }
+  
