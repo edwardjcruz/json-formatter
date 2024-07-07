@@ -6,7 +6,7 @@ const Editor = ({ value, onChange }) => {
       value={value}
       onChange={onChange}
       className="editor"
-      style={{ width: '800px', height: '250px' }}  // Ensure it has sufficient space
+      style={{ width: '600px', height: '300px' }}  // Ensure it has sufficient space
     />
   );
 };
