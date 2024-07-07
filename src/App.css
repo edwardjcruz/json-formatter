@@ -1,6 +1,6 @@
 :root {
   --icon-color-light: #333; /* Default color for light mode */
-  --icon-color-dark: #333  /* Color for dark mode */
+  --icon-color-dark: #333; /* Color for dark mode */
 }
 
 body {
@@ -12,18 +12,16 @@ body {
   align-items: center;
   min-height: 100vh;
   background-color: #ffffffb1;
-  position: relative; /* Add position relative here */
+  position: relative;
 }
 
 .toggle-button {
   position: absolute;
-  top: 10px; /* Adjust top as necessary for vertical positioning */
-  right: 10px; /* Closer to the right edge */
+  top: 10px;
+  right: 10px;
   z-index: 1000;
   border-radius: 10px;
-  /* Add any other styling needed for the button here */
 }
-
 
 .app {
   display: flex;
@@ -38,7 +36,7 @@ body {
   width: 95%;
   max-width: 1600px;
   margin: 0 auto;
-  padding-top: 160px; /* Adjust based on the height of your header */
+  padding-top: 180px; /* Adjust based on the height of your header */
 }
 
 .app.dark {
@@ -56,21 +54,49 @@ body {
 
 .instruction-container p {
   margin-left: 10px;
-  font-size: 16px;
   font-size: 30px;
+}
 
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 95%;
+  max-width: 1600px;
+  margin: 100px auto 20px;
+}
+
+.info-section, .editor-container {
+  flex: 1;
+  padding: 20px;
+  min-height: 300px;
+}
+
+.app.dark, .info-section {
+  color:#333
+
+} 
+
+.info-section {
+  margin-right: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left;
 }
 
 .editor-container {
   position: relative;
-  width: 100%;
+  width: 90%; /* Match the editor width for alignment */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 auto; /* Center the container */
 }
 
 .editor {
-  width: 90%;
+  width: auto; /* Adjusted to fill flex container */
   margin: 0 auto;
   padding: 10px;
   border: 1px solid #ccc;
@@ -81,27 +107,27 @@ body {
   font-family: 'Consolas', 'Monaco', monospace;
   font-size: 16px;
   resize: vertical;
-  margin-top: 20px;
+  margin-top: 100px;
 }
 
-.copy-icon {
-  position: absolute;
-  right: 90px;
-  top: 35px;
-  cursor: pointer;
-  color: var(--icon-color-light); /* Default color for light mode */
+.editor-container .copy-icon {
+  position: absolute; /* Adjust as necessary */
+  right: 25px; /* Right inside the editor container */
+  top: 130px; /* Positioned at the top of the editor */
+  z-index: 10; /* Ensure it's above other elements */
 }
+
 
 .app.dark .copy-icon {
-  color: var(--icon-color-dark); /* Color for dark mode */
+  color: #333;  
 }
 
+
 .button-container {
+  width: 50%; /* Make the button container take the full width of the editor container */
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-  width: 30%;
-  border-radius: 10px;
+  justify-content: space-around; /* Keep this to space the buttons equally */
+  margin-top: 20px; /* Space between the editor and the buttons */
 }
 
 button {
@@ -123,24 +149,9 @@ button:hover {
   margin-top: 10px;
 }
 
-.header-text {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 400;  
-  font-size: 24px;   
-  color: #0c0202; 
-  font-size: xx-large;
-}
-
-
-/* Dark mode style */
-.app.dark .header-text {
-  color: #fff; /* Light text for dark background */
-}
-
 .footer {
   width: 100%;
-  padding: 60px;
-  text-align: right;
+  text-align: center;
   font-size: 14px;
   color: #666;
   margin-top: 40px;
@@ -148,30 +159,21 @@ button:hover {
 
 .header {
   display: flex;
-  justify-content: space-between; /* Ensures the title and toggle button are on opposite sides */
-  align-items: center; /* Centers items vertically */
-  width: 100%; /* Ensures it takes full width */
-  padding: 10px 20px; /* Provides padding inside the navbar */
-  background-color: #333; /* Background color for the navbar */
-  color: #fff; /* Text color for the navbar */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for depth */
-  position: fixed; /* Fixes the navbar at the top */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* Ensures navbar stays on top */
+  z-index: 1000;
 }
 
-.info-section {
-  width: 90%;
-  margin: 20px auto;
-  margin-top: 220px; /* Increase this value to push the section further down */
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: left;
-}
-
-.app.dark .info-section {
-  color:#0c0202
+.message {
+  color: #28a745; /* Green color for success messages */
+  margin-top: 10px;
+  font-size: 16px;
 }
